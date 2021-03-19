@@ -59,4 +59,3 @@ console.log(itemAmount)
     var qualifies = isNotExpired && (isPremium || twoItems);
     alert("You qualify for the product offer: " + qualifies);
 
-
