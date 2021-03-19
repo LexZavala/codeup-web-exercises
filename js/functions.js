@@ -9,10 +9,10 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello (name){
-    var helloMessage = "Hello " + name;
-    return helloMessage;
+    return  "Hello " + name;
+
 }
-console.log(sayHello(name));
+console.log(sayHello(name))
 
 /**
  * TODO:
@@ -32,7 +32,7 @@ console.log(helloMessage)
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-    var myName = "Lex"
+    var myName = "Lex";
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -78,7 +78,6 @@ function calculateTip(per,bill){
 }
 
 console.log(calculateTip(15, 33.42));
-
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -90,7 +89,7 @@ console.log(percent)
     var total = prompt("What is the total amount of your bill?");
 console.log(total)
     alert("Great, your tip amount is $" + calculateTip(percent,total));
-console.log("$" + calculateTip(percent,total)).
+console.log("$" + calculateTip(percent,total));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -105,7 +104,8 @@ console.log("$" + calculateTip(percent,total)).
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount(price, discount){
+    function applyDiscount(price,discount){
     var discountedPrice = (price - (price * discount));
-    return discountedPrice.toFixed(2);
+    return discountedPrice;
 }
+console.log(applyDiscount(45.99,0.12))
