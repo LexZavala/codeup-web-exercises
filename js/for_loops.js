@@ -24,18 +24,15 @@ for (var i = 0; i <= 10; i++){
     }
 }
 
-// for (var i =1; i <= 9; i++){
-//     console.log(i);
-//     while ( i <= 999999999){
-//         i * 11
-//     }
-// }
-
 for(var i=1; i<=9; i++){
     var num ='';
     for(var x =0; x <i; x++){
         num += i;
-        ;
     }
     console.log(num)
+}
+
+for (var i=100; i >=5; i){
+    console.log(i);
+    i = (i - 5);
 }
