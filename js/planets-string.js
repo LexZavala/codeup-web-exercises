@@ -32,7 +32,18 @@
     //     arr.join("<li></li>")
     //
     // }
-    var unorderedString = "<ul><li>Mercury</li><li>Venus</li><li>Earth</li><li>Mars</li><li>Jupiter</li><li>Saturn</li><li>Uranus</li><li>Neptune</li></ul>"
-    console.log(unorderedString);
+    var planetsList = "<ul>";
+
+    planetsArray.forEach(function (planet){
+        planetsList += "<li>" + planet + "</li>";
+    })
+    planetsList += "</ul>";
+
+    console.log(planetsList);
+
+
+    //     "<ul><li>Mercury</li><li>Venus</li><li>Earth</li><li>Mars</li><li>Jupiter</li><li>Saturn</li><li>Uranus</li><li>Neptune</li></ul>"
+    // console.log(unorderedString);
+
 
 })();
