@@ -26,3 +26,27 @@ for (var i = 1; i<= 50; i = i % 2 !== 1) {
 //         break;
 //     }
 // }
+// var oddNum = parseInt(prompt("Give me an odd number between 1-50:"));
+
+function isNumEven(num){
+    return num % 2 === 0;
+}
+
+function isNumberInRange (num){
+    return num >= 1 && num <= 50;
+}
+
+
+while(true){
+    if (!isNumEven(oddNum) && isNumberInRange(oddNum)){
+        break;
+    }
+    var oddNum = parseInt(prompt("Give me an odd number between 1-50:"));
+}
+
+for (var i = 1; i<= 50; i += 2) {
+    if ( i === oddNum){
+        console.log("Yikes! Skipping number: "+ oddNum);
+        continue;
+    }
+}
