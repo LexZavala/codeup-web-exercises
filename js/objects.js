@@ -157,13 +157,13 @@
      */
     function createBook(titleInput, authorInput){
         var authorName = authorInput.split(" ");
-        return {
+        return  {
             title: titleInput,
             author: {
                 firstName: authorName[0],
                 lastName: authorName[authorName.length - 1]
             }
-        }
+        };
     }
 console.log(createBook("Coding Struggles", "Lex Zavala"));
 
