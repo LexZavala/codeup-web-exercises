@@ -1,4 +1,4 @@
-// (function() {
+(function() {
     "use strict";
 
     /**
@@ -113,7 +113,6 @@
 
     ];
 
-
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -172,4 +171,4 @@ console.log(createBook("Coding Struggles", "Lex Zavala"));
         console.log("Title: " + book.title);
         console.log("Author: " + bookObj.author.firstName + " " + bookObj.author.lastName);
     }
-// })();
+})();
