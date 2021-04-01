@@ -16,7 +16,8 @@ var theTruck = {
         technology:false,
         navigation: false,
         premiumOffRoad: true
-    }
+    },
+    started: false
 }
 
 var yourTruck = {
