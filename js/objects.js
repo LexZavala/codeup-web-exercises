@@ -43,11 +43,7 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-    // function discountDiff (num){
-    //     if (num <= treshold){
-    //         return treshold - num;
-    //     }
-    // }
+
 
     var shoppers = [
         {name: 'Cameron', amount: 180},
@@ -57,7 +53,8 @@
 
     shoppers.forEach(function (shopper){
         if(shopper.amount >= 200) {
-            console.log(shopper.name + " has spent "+ shopper.amount +" therefore, will receive a 12% discount of $" + (shopper.amount * .12) + ". Making your total $" + (shopper.amount * .88))
+            var afterDiscount = shopper.amount - (shopper.amount * .12);
+            console.log(shopper.name + " has spent "+ shopper.amount +" therefore, will receive a 12% discount of $" + (shopper.amount * .12) + ". Making your total $" + afterDiscount)
         }else{
             console.log("Sorry " + shopper.name + " you only spent $"+ shopper.amount + " it looks like you won't be able to get a discount today because you need to spend $" + (200 - shopper.amount) + " more in order to get the 12% discount");
         }
