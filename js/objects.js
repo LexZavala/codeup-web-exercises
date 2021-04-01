@@ -168,7 +168,9 @@
 console.log(createBook("Coding Struggles", "Lex Zavala"));
 
     function showBookInfo (bookObj){
-        console.log("Title: " + book.title);
+        console.log("Title: " + bookObj.title);
         console.log("Author: " + bookObj.author.firstName + " " + bookObj.author.lastName);
     }
+
+    books.forEach(showBookInfo);
 })();
