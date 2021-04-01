@@ -43,11 +43,11 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-    function discountDiff (num){
-        if (num <= treshold){
-            return treshold - num;
-        }
-    }
+    // function discountDiff (num){
+    //     if (num <= treshold){
+    //         return treshold - num;
+    //     }
+    // }
 
     var shoppers = [
         {name: 'Cameron', amount: 180},
