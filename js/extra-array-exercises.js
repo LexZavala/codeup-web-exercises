@@ -120,3 +120,26 @@ function adminList (arr){
 adminList(Admins);
 
 // Problem 5
+
+var breads  = [
+    "white",
+    "wheat",
+    "rhy",
+    "white"
+];
+
+var fillings = [
+    "pb&j",
+    "ham",
+    "cheese steak",
+    "tuna"
+];
+
+function makeSandwhichObjects (arrOne, arrTwo){
+    newArr = [];
+    for (var i = 0; i < arrOne.length; i++){
+    newArr.push({bread: arrOne[i], filling: arrTwo[i]});
+    }
+    return newArr;
+}
+console.log(makeSandwhichObjects(breads , fillings));
