@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+    <h1>Registration Page</h1>
+    <form method="post" action="https://request-inspector.glitch.me/">
+        <label for="username">Username:</label>
+        <input id="username" name="username" type="text" placeholder="Username">
+        <br>
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" placeholder="Password">
+        <br>
+        <br>
+
+        <label for="bio-id">Share some info about yourself:</label>
+        <br>
+        <textarea id="bio-id" name="bio" rows="10" cols="25"></textarea>
+        <br>
+
+        <h3>How'd you hear about us?</h3>
+        <input id="ad-bb" name="advertising-1" value="billboard" type="radio">
+        <label for="ad-bb">Billboard</label>
+        <input id="ad-ra" name="advertising-2" value="radio ad" type="radio">
+        <label for="ad-ra">Radio Ad</label>
+        <input id="ad-ia" name="advertising-3" value="internet ad" type="radio">
+        <label for="ad-ia">Internet Ad</label>
+        <input id="ad-other" name="advertising-4" value="other" type="radio">
+        <label for="ad-other">Other</label>
+        <br>
+
+        <h3>
+        <label for="select-os">What Operating System are you using?</label>
+        </h3>
+        <select id="select-os" name="Operating system in use">
+            <option value="MacOS">MacOS</option>
+            <option value="Windows">Windows</option>
+            <option value="Linux">Linux</option>
+            <option value="ChromeOS">Chrome OS</option>
+        </select>
+        <br>
+        <p>
+        <button type="submit">Submit</button>
+        </p>
+    </form>
+
+</body>
+</html>
