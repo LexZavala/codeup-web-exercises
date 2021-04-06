@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="https://request-inspector.glitch.me/">
+        <label for="username">Username:</label>
+        <input id="username" name="username" type="text">
+        <br>
+
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password">
+        <br>
+
+        <label for="body-text">Tell me about you</label>
+        <br>
+        <textarea id="body-text" name="body" cols="25" rows="10"></textarea>
+        <br>
+
+        <h3>What is the correct answer?</h3>
+        <input name="mutli-choice" id="choice-a" value="A" type="radio">
+        <label for="choice-a">A</label>
+        <br>
+        <input name="mutli-choice" id="choice-b" value="B" type="radio">
+        <label for="choice-b">B</label>
+        <br>
+        <input name="mutli-choice" id="choice-c" value="C" type="radio">
+        <label for="choice-c">C</label>
+        <br>
+        <input name="mutli-choice" id="choice-d" value="D" type="radio">
+        <label for="choice-d">D</label>
+        <br>
+
+
+
+        <h3>How'd you hear about us?</h3>
+        <label for="ad-bb">Billboards</label>
+        <input id="ad-bb" name="advertising" value="Billboard" type="checkbox">
+        <label for="ad-yt">Youtube</label>
+        <input id="ad-yt" name="advertising" value="Youtube" type="checkbox">
+        <label for="ad-np">Newspaper</label>
+        <input id="ad-np" name="advertising" value="Newspaper" type="checkbox">
+        <br>
+
+        <h3>
+            <label for="coffee-preference">What kind of coffee roast do you like?</label>
+        </h3>
+        <select id="coffee-preference" name="coffe_preference">
+        <option value="light">Light Roast</option>
+        <option value="medium">Medium</option>
+        <option value="dark">Dark Roast</option>
+        </select>
+        <br>
+        <br>
+        <input name="the-answer" value="42" type="hidden">
+        <button type="submit">Please click me!</button>
+
+    </form>
+</body>
+</html>
