@@ -1,12 +1,72 @@
-body{
-    font-family: sans-serif ;
+@import url(https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap);
+
+/*Header Elements*/
+header{
+    text-align: center;
 }
 
 .fancy-header {
-    color: mediumpurple;
+    color: #AFC1D0;
     text-decoration: underline;
+    /*font-family: ;*/
+
+}
+/*Body and Section Elements*/
+body{
+    font-family: cabin;
+    background-color: ghostwhite;
+    background-image: url("../img/stormy-background.jpeg");
+    background-size: contain;
+    background-blend-mode: multiply;
+    color: white;
+}
+
+section:first-of-type {
+    font-size: large;
 }
 
 h2{
-    color: crimson;
+    color: skyblue;
 }
+.h2-header {
+    text-align: center;
+}
+
+ol, ul{
+    list-style: square;
+}
+
+/*Table Elements*/
+table, tr, td {
+    margin: 40px auto;
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+    font-size: x-large;
+}
+
+th{
+    text-decoration: underline;
+    color: #B1D4E0;
+}
+
+/*Footer and End Anchor Elements*/
+footer > p{
+    font-size: 11px;
+    text-align: center;
+}
+footer > a{
+    float: right;
+}
+
+a {
+    text-align: center;
+}
+a:link{color: cadetblue;}
+a:visited{color: coral;}
+a:hover{color: royalblue;}
+
+
+
+
