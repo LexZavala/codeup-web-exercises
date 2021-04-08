@@ -1,0 +1,12 @@
+body{
+    font-family: sans-serif ;
+}
+
+.fancy-header {
+    color: mediumpurple;
+    text-decoration: underline;
+}
+
+h2{
+    color: crimson;
+}
