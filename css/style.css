@@ -9,7 +9,7 @@ header{
 .fancy-header {
     color: #AFC1D0;
     text-decoration: underline;
-    /*font-family: ;*/
+    font-size: 300%;
 
 }
 /*Body and Section Elements*/
@@ -57,7 +57,7 @@ footer > p{
     text-align: center;
 }
 footer > a{
-    float: right;
+    float: left;
 }
 
 a {
