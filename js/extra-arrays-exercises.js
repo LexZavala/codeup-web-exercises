@@ -14,3 +14,18 @@ allIndexesOf(fruits, "apple");
 allIndexesOf(fruits, "guava");
 allIndexesOf(fruits, "pineapple");
 
+
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+
+function removeAll (arr, value){
+    for(var i = 0; i < arr.length; i++){
+        var index = arr.indexOf(value);
+        if(value === arr[i]){
+            var newArr = arr.slice(index, 2);
+        }
+    } console.log(newArr);
+}
+removeAll(bugs, "ant");
+removeAll(bugs, "mosquito");
+removeAll(bugs, "roach");
+
