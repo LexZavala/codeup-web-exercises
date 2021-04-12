@@ -28,7 +28,7 @@ var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "re
 
 function removeAll(arr, value) { return arr.filter(function(ele){ return ele !== value; });}
 
-console.log(removeAll(bugs, "ant"));;
-console.log(removeAll(bugs, "mosquito"));;
-console.log(removeAll(bugs, "roach"));;
+console.log(removeAll(bugs, "ant"));
+console.log(removeAll(bugs, "mosquito"));
+console.log(removeAll(bugs, "roach"));
 
