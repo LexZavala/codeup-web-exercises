@@ -1,0 +1,29 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-evenly;*/
+    align-items: baseline;
+    /*height: 20em;*/
+}
+
+/*.flex-container {*/
+/*    display: flex;*/
+/*    align-items: baseline;*/
+/*    border: 5px solid goldenrod;*/
+/*    height: 100vh;*/
+/*}*/
+/*.box1 {*/
+/*    font-size: 15px;*/
+/*}*/
+/*.box2 {*/
+/*    font-size: 30px;*/
+/*}*/
+/*.box3 {*/
+/*    font-size: 45px;*/
+/*}*/
+/*.box4 {*/
+/*    font-size: 60px;*/
+/*}*/
+/*.box5 {*/
+/*    font-size: 75px;*/
+/*}*/
