@@ -1,0 +1,48 @@
+
+*{
+    box-sizing: border-box;
+    font-family:  Montserrat, sans-serif, 'Work Sans', Serif;
+}
+nav {
+    display: flex;
+    background-color: lightgrey;
+    /*height: 3em;*/
+    justify-content: center;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+}
+li {
+    list-style: none;
+    font-size: medium;
+    align-content: space-between;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+a:link {
+    color: black;
+}
+
+a:hover {
+    color: cornflowerblue;
+}
+
+#logo{
+    font-size: 3em;
+    padding: .2em;
+    margin: 0 100px;
+    position: relative;
+}
+
+li img {
+    margin: 0 auto ;
+}
+
