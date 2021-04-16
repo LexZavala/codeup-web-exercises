@@ -1,0 +1,48 @@
+/*.nav-item > .active{*/
+/*    color: #848487;*/
+/*}*/
+
+#signup{
+    color: grey;
+}
+
+div .container {
+    padding: 0;
+
+}
+
+.jumbotron-fluid{
+    margin-top: 1.5em;
+}
+.display-4{
+    background-color: whitesmoke;
+    opacity: 70%;
+    text-align: center;
+}
+
+span{
+    margin-right: 6px;
+    /*padding-bottom: 2px;*/
+}
+
+.card-body{
+margin-bottom: 1em;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+}
+
+#unordered-list-crust {
+
+}
+
+
+
+/*div .card{*/
+/*    margin-left: 1em;*/
+/*    margin-bottom: 1em;*/
+/*    margin-right: 1em;*/
+/*    width: 100%;*/
+/*}*/
+
+
+
