@@ -55,13 +55,13 @@
             <a href="#cheese" class="nav-link" data-toggle="tab"><span class="badge badge-pill badge-secondary">2</span>Cheese and sauce</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link" data-toggle="tab"><span class="badge badge-pill badge-secondary" data-toggle="tab">3</span>Toppings</a>
+            <a href="#toppings" class="nav-link" data-toggle="tab"><span class="badge badge-pill badge-secondary" data-toggle="tab">3</span>Toppings</a>
         </li>
     </ul>
 <!--CARD-->
     <!--CRUST AND SIZE-->
     <div class="tab-content">
-        <div class="card tab-pane fade show active" id="size">
+        <div id="size" class="card tab-pane fade show active" style="margin-bottom: 1.5em;">
             <div class="card-body bg-primary text-white">
                 Choose size and crust
             </div>
@@ -102,11 +102,11 @@
                     </div>
                 </div>
             <div class="card-footer text-muted text-right">
-                <a href="#" class="btn btn-primary">Next Step ></a>
+                <a href="#cheese" class="btn btn-primary">Next Step ></a>
             </div>
         </div>
     <!--CHEESE AND SAUCE-->
-        <div class="card tab-pane fade show active" id="cheese">
+        <div class="card tab-pane fade show active" id="cheese" style="margin-bottom: 1.5em;">
             <div class="card-body bg-primary text-white">
                 Choose Cheese and Sauce
             </div>
@@ -154,6 +154,69 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <a href="#" class="btn btn-primary">< Previous Step</a>
                     <a href="#" class="btn btn-primary">Next Step ></a>
+                </div>
+            </div>
+        </div>
+    <!--TOPPINGS-->
+        <div class="card tab-pane fade show active" id="toppings" style="margin-bottom: 1.5em;">
+            <div class="card-body bg-primary text-white">
+                Choose Toppings
+            </div>
+            <div class="card" style="margin: 0 1em;">
+                <div class="card-header">
+                    Choose Meats
+                </div>
+                <div>
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            <input id="beef-meat" name="topping-choice-1" type="checkbox">
+                            <label for="beef-meat">Beef</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input id="ham-meat" name="topping-choice-2" type="checkbox">
+                            <label for="ham-meat">Ham</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input id="philly-meat" name="topping-choice-3" type="checkbox">
+                            <label for="philly-meat">Philly Steak</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input id="bacon-meat" name="topping-choice-4" type="checkbox">
+                            <label for="bacon-meat">Bacon</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card" style="margin: 1em;">
+                <div class="card-header">
+                    Choose Non-Meats
+                </div>
+                <div>
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            <input id="peppers-nonmeat" name="topping-choice-1" type="checkbox">
+                            <label for="peppers-nonmeat">Green Peppers</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input id="mushrooms-nonmeat" name="topping-choice-2" type="checkbox">
+                            <label for="mushrooms-nonmeat">Mushrooms</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input id="onions-nonmeat" name="topping-choice-3" type="checkbox">
+                            <label for="onions-nonmeat">Onions</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input id="jalpeno-nonmeat" name="topping-choice-4" type="checkbox">
+                            <label for="jalpeno-nonmeat">Jalapeno Peppers</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer text-muted text-right">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="#" class="btn btn-primary">Checkout</a>
                 </div>
             </div>
         </div>
