@@ -1,0 +1,11 @@
+body{
+    padding: 1em;
+}
+
+#header-title {
+    font-size: 4em;
+}
+
+#ruler {
+    border-bottom: 8px solid #99aa7b ;
+}
