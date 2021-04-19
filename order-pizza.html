@@ -49,19 +49,19 @@
     <h2>Build your own pizza!</h2>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a href="#size" class="nav-link active" data-toggle="tab"><span class="badge badge-pill badge-secondary">1</span>Size and crust </a>
+            <a href="#size" class="nav-link active" data-toggle="tab" role="tab" id="tab-1"><span class="badge badge-pill badge-secondary">1</span>Size and crust </a>
         </li>
         <li class="nav-item">
-            <a href="#cheese" class="nav-link" data-toggle="tab"><span class="badge badge-pill badge-secondary">2</span>Cheese and sauce</a>
+            <a href="#cheese" class="nav-link" data-toggle="tab" role="tab" id="tab-2"><span class="badge badge-pill badge-secondary">2</span>Cheese and sauce</a>
         </li>
         <li class="nav-item">
-            <a href="#toppings" class="nav-link" data-toggle="tab"><span class="badge badge-pill badge-secondary" data-toggle="tab">3</span>Toppings</a>
+            <a href="#toppings" class="nav-link" data-toggle="tab" role="tab" id="tab-3"><span class="badge badge-pill badge-secondary" data-toggle="tab">3</span>Toppings</a>
         </li>
     </ul>
 <!--CARD-->
     <!--CRUST AND SIZE-->
     <div class="tab-content">
-        <div id="size" class="card tab-pane fade show active" style="margin-bottom: 1.5em;">
+        <div role="tabpanel" id="size" class="card tab-pane fade show active" style="margin-bottom: 1.5em;">
             <div class="card-body bg-primary text-white">
                 Choose size and crust
             </div>
@@ -102,11 +102,11 @@
                     </div>
                 </div>
             <div class="card-footer text-muted text-right">
-                <a href="#cheese" class="btn btn-primary">Next Step ></a>
+                <a href="#tab-2" class="btn btn-primary" data-toggle="tab" role="tabpanel">Next Step ></a>
             </div>
         </div>
     <!--CHEESE AND SAUCE-->
-        <div class="card tab-pane fade show active" id="cheese" style="margin-bottom: 1.5em;">
+        <div role="tabpanel" class="card tab-pane fade" id="cheese" style="margin-bottom: 1.5em;">
             <div class="card-body bg-primary text-white">
                 Choose Cheese and Sauce
             </div>
@@ -158,7 +158,7 @@
             </div>
         </div>
     <!--TOPPINGS-->
-        <div class="card tab-pane fade show active" id="toppings" style="margin-bottom: 1.5em;">
+        <div role="tabpanel" class="card tab-pane fade" id="toppings" style="margin-bottom: 1.5em;">
             <div class="card-body bg-primary text-white">
                 Choose Toppings
             </div>
@@ -222,6 +222,10 @@
         </div>
     </div>
 </main>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>

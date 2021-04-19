@@ -1,7 +1,9 @@
 /*.nav-item > .active{*/
 /*    color: #848487;*/
 /*}*/
-
+.collapsed {
+    margin-left: auto;
+}
 #signup{
     color: grey;
 }
