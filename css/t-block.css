@@ -2,10 +2,21 @@ body{
     padding: 1em;
 }
 
-#header-title {
-    font-size: 4em;
-}
+/*#header-title {*/
+/*    font-size: 4em;*/
+/*}*/
 
 #ruler {
     border-bottom: 8px solid #99aa7b ;
 }
+
+li, p {
+    font-size: 22px;
+}
+ p {
+    padding: 0;
+}
+
+section{
+     padding-bottom: 4em;
+ }
