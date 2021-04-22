@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+:root {
+    --design-color: #E6563B;
+    --develop-color: #EB9D3A;
+    --support-color: #7CB06C;
+    --host-color: #00ABA9;
+    --icon-height: 18px;
+    --icon-width: 18px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F0F0F0;
+    font-family: 'Abel', sans-serif;
+}
+
+.circle {
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 105px;
+    height: 105px;
+}
+
+.dots {
+    border-radius: 50%;
+    /*border: 5px solid white;*/
+    width: 18px;
+    height: 18px;
+}
+
+.heading{
+    font-family: 'Anton', sans-serif;
+}
+
+ul{
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    padding: 0
+}
+
+h1{
+    font-size: 64px;
+}
+
+.location {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h4 {
+    background: transparent;
+    margin: 0;
+}
+
+.small-text {
+    font-size: 10px;
+}
+
+/*#circle-container {*/
+/*    display: flex;*/
+/*}*/
+
+.circle-container {
+    flex-wrap: wrap;
+    margin: auto;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 1em;
+}
+
+@media screen and (max-width: 575px) {
+    .circle-container {
+        width: 250px;
+        border-bottom: none;
+    }
+}
+
+.design {
+    background-color: var(--design-color);
+    color: white;
+}
+
+.develop {
+    background-color: var(--develop-color);
+    color: white;
+}
+
+.support {
+    background-color: var(--support-color);
+    color: white;
+}
+
+.host {
+    background-color: var(--host-color);
+    color: white;
+}
+
+.des-dot {
+    background-color: var(--design-color);
+    color: black;
+}
+
+.dev-dot {
+    background-color: var(--develop-color);
+    color: black;
+}
+
+.sup-dot {
+    background-color: var(--support-color);
+    color: black;
+}
+
+.host-dot {
+    background-color: var(--host-color);
+    color: black;
+}
+
+img {
+    /*margin: aut;*/
+    width: 100%;
+    border: solid .7em #E6E6E6;
+    border-radius: 2%;
+    margin-bottom: 1em;
+}
+
+/*#man-pic{*/
+/*    width: 224.17px;*/
+/*    height: 156.7px;*/
+/*}*/
+
+.project-padding {
+    margin-bottom: 2em;
+}
