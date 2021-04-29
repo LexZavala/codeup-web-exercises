@@ -5,18 +5,18 @@
     <title>JQuery Exercises</title>
 </head>
 <body>
-    <h1>Hello JQuery</h1>
+    <h1 id="header-title" class="codeup">Hello JQuery</h1>
 
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum explicabo magni, nobis perspiciatis quaerat reiciendis temporibus voluptate! Accusamus accusantium aspernatur dolores error eum. </p>
+    <p class="content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum explicabo magni, nobis perspiciatis quaerat reiciendis temporibus voluptate! Accusamus accusantium aspernatur dolores error eum. </p>
 
-    <h2>Here are some examples:</h2>
-    <ul>
-        <li>QUERY 1</li>
-        <li>QUERY 2</li>
-        <li>QUERY 3</li>
+    <h2 id="sub-header">Here are some examples:</h2>
+    <ul class="codeup">
+        <li id="first-example">QUERY 1</li>
+        <li id="second-example">QUERY 2</li>
+        <li id="third-example">QUERY 3</li>
     </ul>
 
-    <div> That is it, no more examples left.</div>
+    <div id="footer" class="codeup"> That is it, no more examples left.</div>
 
 
 
@@ -27,9 +27,20 @@
 <script src="jquery-3.6.min.js"></script>
 <script>
     "use strict";
-    // $(document).ready(function (){
+    // $('#sub-header').ready(function (){
     //     alert("The DOM is now ready");
-    // })
+    // });
+
+// ID SELECTORS
+    // $('#header-title, #sub-header').css('color', '#B5E5CF');
+// CLASS SELECTOR
+    // $('.codeup').css('border', ' 1px red solid');
+// ELEMENT SELECTOR
+    $('body').css('background-color', '#28282B')
+    $('li').css('font-size', '20px');
+    $('h1, p, li').css('background-color', '#FBE7C6')
+    var alertContent = $('h1').text();
+        alert(alertContent);
 </script>
 </body>
 </html>
