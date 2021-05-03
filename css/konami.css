@@ -1,3 +1,14 @@
-body{
-    background: #00ABA9;
+body {
+    background: linear-gradient( -45deg, #43cea2, #00cdac, #02aab0, #185a9d);
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+}
+
+i {
+    font-size: 6em;
+    text-align: center;
+
 }
