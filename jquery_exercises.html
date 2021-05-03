@@ -36,11 +36,30 @@
 // CLASS SELECTOR
     // $('.codeup').css('border', ' 1px red solid');
 // ELEMENT SELECTOR
-    $('body').css('background-color', '#28282B')
-    $('li').css('font-size', '20px');
-    $('h1, p, li').css('background-color', '#FBE7C6')
-    var alertContent = $('h1').text();
-        alert(alertContent);
+//     $('body').css('background-color', '#28282B')
+//     $('li').css('font-size', '20px');
+//     $('h1, p, li').css('background-color', '#FBE7C6')
+//     var alertContent = $('h1').text();
+//         alert(alertContent);
+
+//    JQuery CODE
+
+    $('h1').click(function (){
+        $('h1').css('background-color', 'red');
+    });
+
+    $('p').dblclick(function (){
+        $('p').css('font-size', '18px');
+    });
+
+    var redHover = function (){
+        $('li').css('color', 'red');
+    }
+    var blackHover = function (){
+
+    }
+    $('li').hover(redHover());
+
 </script>
 </body>
 </html>
