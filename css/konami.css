@@ -1,14 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Taviraj:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    background: linear-gradient( -45deg, #43cea2, #00cdac, #02aab0, #185a9d);
+    background: linear-gradient( -26deg, #876100, #191919, #000000);
+    /*background: linear-gradient( -26deg,  #FE8116, #FFEA61, #FFDD3C);*/
     height: 100vh;
+    color: whitesmoke;
+    background-size: 450% 450%;
+    animation: change 5s ease-in-out alternate infinite;
 }
 
 h1{
     text-align: center;
+    font-family: 'Aclonica', sans-serif;
+    font-size: 65px;
 }
 
 i {
     font-size: 6em;
     text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 
+p {
+    font-family: 'Taviraj', serif;
+    font-size: x-large;
+    text-align: center;
+    opacity: 75%;
+}
+
+@keyframes change{
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
 }

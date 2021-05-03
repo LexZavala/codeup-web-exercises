@@ -7,11 +7,15 @@
     <script src="https://kit.fontawesome.com/1e8ed50084.js" crossorigin="anonymous"></script>
 </head>
 <body class="container">
-    <div class="row">
-        <h1 class="col-12">Konami Code</h1>
+    <div class="row mt-4">
+        <h1 class="col-12">KONAMI CODE</h1>
     </div>
-    <div class ="row">
-        <i class="fas fa-lightbulb "></i>
+    <div class ="row d-flex justify-content-center">
+        <i class="fas fa-lightbulb d-none"></i>
+        <i class="far fa-lightbulb"></i>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <p class="col-8"> The power is currently off, enter secret code and let there be light</p>
     </div>
 
 <!--SCRIPT AT THE END-->
@@ -26,7 +30,8 @@
         keyArr.push((event.keyCode));
         console.log(keyArr);
         if (keyArr.join(',') === konamiCode.join(',')){
-            alert("you have 30 lives");
+            $('body').css('background', 'linear-gradient( -26deg,  #FE8116, #FFEA61, #FFDD3C)');
+            $('body').css('animation', 'change 5s ease-in-out alternate infinite');
         }
     });
 
