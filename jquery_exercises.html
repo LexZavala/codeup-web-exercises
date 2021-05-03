@@ -44,21 +44,23 @@
 
 //    JQuery CODE
 
-    $('h1').click(function (){
-        $('h1').css('background-color', 'red');
-    });
-
+// background change
+var backgroundChange = function (){
+    $('h1').css('background-color', 'red');
+};
+    $('h1').click(backgroundChange);
+// font size change
     $('p').dblclick(function (){
         $('p').css('font-size', '18px');
     });
+// Hover color change
+    $('li').hover(function (){
+        $(this).css('color', 'red');
+    },
+    function (){
+        $(this).css('color', 'black');
+    });
 
-    var redHover = function (){
-        $('li').css('color', 'red');
-    }
-    var blackHover = function (){
-
-    }
-    $('li').hover(redHover());
 
 </script>
 </body>
