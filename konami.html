@@ -11,8 +11,8 @@
         <h1 class="col-12">KONAMI CODE</h1>
     </div>
     <div class ="row d-flex justify-content-center">
-        <i class="fas fa-lightbulb d-none"></i>
-        <i class="far fa-lightbulb"></i>
+        <i class="fas fa-lightbulb" style="display: none" id="on"></i>
+        <i class="far fa-lightbulb" id="off"></i>
     </div>
     <div class="row d-flex justify-content-center">
         <p class="col-8"> The power is currently off, enter secret code and let there be light</p>
@@ -32,10 +32,13 @@
         if (keyArr.join(',') === konamiCode.join(',')){
             $('body').css('background', 'linear-gradient( -26deg,  #FE8116, #FFEA61, #FFDD3C)');
             $('body').css('animation', 'change 5s ease-in-out alternate infinite');
+            $('#off').css ('display', 'none');
+            $('#on').css ('display', 'block');
+            $('body').css('background-size', '450%, 450%');
+            $('body').css('color', '#36454F');
+            $('p').html("You knew the code and the power is now on!");
         }
     });
-
-
 </script>
 </body>
 </html>
