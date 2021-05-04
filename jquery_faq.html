@@ -92,8 +92,12 @@
             $(this).children().last().toggleClass('highlightYellow');
         });
     });
-
-
+// NEEDS REFACTOR
+$('h3').click(function (){
+    $('h3').each(function (){
+    $('ul').first().css('font-weight', 'bold');
+    });
+});
 
 
 </script>
