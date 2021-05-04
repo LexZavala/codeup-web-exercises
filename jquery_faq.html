@@ -44,31 +44,29 @@
         </dl>
     </main>
     <aside>
-        <h1>Park facts</h1>
+        <h2>Park facts</h2>
         <h3>Yellowstone National Park</h3>
         <ul id="national-parks">
-            <li>Arches</li>
-            <li>Badlands</li>
-            <li>Carlsbad Caverns</li>
-            <li>Denali</li>
-            <li>Everglades</li>
+            <li>Oldest US national Park</li>
+            <li>Is home to more than 500 active geysers (more than half the world’s geysers).</li>
+            <li>Home to the largest concentration of mammals in the lower 48 states (67 species).</li>
+            <li>There are approximately 1,000 miles of hiking trails in Yellowstone.</li>
         </ul>
         <h3>Yosemite</h3>
         <ul id="state-parks-texas">
-            <li>Abilene</li>
-            <li>Big Bend</li>
-            <li>Choke Canyon</li>
-            <li>Davis Mountains</li>
-            <li>Enchanted Rock</li>
+            <li>Has 3 of 10 highest waterfalls in the world</li>
+            <li>Ribbon Falls in Yosemite is 9x taller than the Niagara Falls</li>
+            <li>Yosemite is the only national park to bid to host the winter Olympics.</li>
+            <li> Yosemite is one of the few places in the U.S. where you can see a rainbow at night.</li>
         </ul>
         <h3>Grand Canyon</h3>
-        <ul id="state-parks-texas">
-            <li>Abilene</li>
-            <li>Big Bend</li>
-            <li>Choke Canyon</li>
-            <li>Davis Mountains</li>
-            <li>Enchanted Rock</li>
+        <ul>
+            <li>One of the Seven Wonders of the World</li>
+            <li>There are an estimated 1,000 caves within the canyon, but only 335 have been recorded.</li>
+            <li> There’s a town inside the canyon with a population of 208.</li>
+            <li> The canyon is home to pink rattlesnakes</li>
         </ul>
+        <a class="highlightButton" id="lastButton" >highlight last</a>
     </aside>
 </body>
 <script src="js/jQuery-3.6.0.min.js"></script>
@@ -88,6 +86,15 @@
     $('dt').click(function (){
         $(this).toggleClass('highlight');
     });
+//    TRAVERSING FUNCTIONS
+    $('#lastButton').click(function (){
+        $("ul").each(function (){
+            $(this).children().last().toggleClass('highlightYellow');
+        });
+    });
+
+
+
 
 </script>
 </html>

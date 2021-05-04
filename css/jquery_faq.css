@@ -7,6 +7,15 @@ h1 {
     margin-bottom: 3em;
 }
 
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+h3 {
+
+}
+
 p {
     font-size: 30px;
     font-weight: bold;
@@ -20,13 +29,13 @@ p {
     border: solid grey 1px;
     border-radius: 5px;
     width: 100%;
-    margin-left: 400px;
+    margin-left: 384px;
     padding: 1px 4px 1px 4px;
     background-color: #47e5b3;
 }
 
 dt{
-    font-weight: bold;
+    font-weight: normal;
     margin: 1.5em;
     font-size: 20px;
     text-align: center;
@@ -43,4 +52,19 @@ dd {
 
 .highlight {
     background-color: #99FF99;
+}
+
+.highlightButton {
+    font-size: medium;
+    font-weight: normal;
+    border: solid grey 1px;
+    border-radius: 5px;
+    width: 100%;
+    margin-left: 384px;
+    padding: 1px 4px 1px 4px;
+    background-color: #47e5b3;
+}
+
+.highlightYellow {
+    background-color: #F8EA8C
 }
