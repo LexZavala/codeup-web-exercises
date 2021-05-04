@@ -9,7 +9,7 @@
 <div>
     <h1>National Park Information</h1>
     <p>Frequently Asked Questions:</p>
-    <div class="button"><button>Show answers</button></div>
+    <a class="button">show answers</a>
 
     <dl>
         <dt>Who is the director of the National Park Service?</dt>
@@ -46,13 +46,21 @@
 </body>
 <script src="js/jQuery-3.6.0.min.js"></script>
 <script>
-    $('button').click(function (){
+    $('.button').click(function (){
         $('dd').toggleClass('invisible');
+        if ($('dd').css('visibility') === 'hidden'){
+            $('dt').css('margin-bottom', '0');
+            $('dt').css('margin-top', '1em');
+            $('a').html('show answers');
+        } else {
+            $('dt').css('margin-bottom', '1.5em');
+            $('a').html('hide answers');
+        }
     });
 
     $('dt').click(function (){
-        $(this).addClass('.highlight');
         $(this).toggleClass('highlight');
     });
+
 </script>
 </html>

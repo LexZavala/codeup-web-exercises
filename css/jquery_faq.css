@@ -11,12 +11,18 @@ p {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: .5em;
+    margin-bottom: .7em;
 }
 
 .button {
-    margin-left: 385px;
-    margin-right: auto;
+ font-size: medium;
+    font-weight: normal;
+    border: solid grey 1px;
+    border-radius: 5px;
+    width: 100%;
+    margin-left: 400px;
+    padding: 1px 4px 1px 4px;
+    background-color: #47e5b3;
 }
 
 dt{
