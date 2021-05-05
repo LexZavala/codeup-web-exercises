@@ -68,6 +68,11 @@
         </ul>
         <a class="highlightButton" id="lastButton" >highlight last</a>
     </aside>
+    <div id="container">
+        <div id="picture-1" class="picture"><img src="img/superman.jpeg"></div>
+        <div id="picture-2" class="picture"><img src="img/batman.jpeg"></div>
+        <div id="picture-3" class="picture"><img src="img/wonderwoman.jpeg"></div>
+    </div>
     <script src="js/jQuery-3.6.0.min.js"></script>
     <script>
         $('.button').click(function (){
@@ -94,24 +99,15 @@
         // NEEDS REFACTOR
         $('h3').click(function (){
             $(this).next().first().css('font-weight', 'bold');
+        //    BETTER SOLUTION $(this).nextAll().css('font-weight', 'bold');
         });
 
-        // $('ul').each(function (){
-        //     $('ul').children().first().click(function (){
-        //         $(this).first('li').css('color', 'blue');
-        //     });
-        // });
-        // THIS ONE WORKS
-        $('ul').each(function (){
-            console.log($(this).children().first().click(function (){
-                console.log($(this).first().css('color', 'blue'));
-            }));
+        $("li").click(function() {
+            $(this).parent().children().first().css("color", "blue");
         });
-        // $('ul').click(function (){
-        //     console.log($(this).children().first().click(function (){
-        //         console.log($(this).first().css('color', 'blue'));
-        //     }));
-        // });
+
+    //    BONUS
+    //     $(this).parent().next().children().first().attr('src');
     </script>
 </body>
 

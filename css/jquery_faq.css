@@ -29,7 +29,8 @@ p {
     border: solid grey 1px;
     border-radius: 5px;
     width: 100%;
-    margin-left: 384px;
+    margin-left: 45%;
+    margin-right: 42%;
     padding: 1px 4px 1px 4px;
     background-color: #47e5b3;
 }
@@ -60,11 +61,34 @@ dd {
     border: solid grey 1px;
     border-radius: 5px;
     width: 100%;
-    margin-left: 384px;
+    margin-left: 45%;
+    margin-right: 42%;
     padding: 1px 4px 1px 4px;
     background-color: #47e5b3;
 }
 
 .highlightYellow {
     background-color: #F8EA8C
+}
+
+#container {
+    width: 500px;
+    height: auto;
+    display: flex;
+    margin: 2em 1em;
+    flex-direction: row;
+    padding: 1.5em;
+}
+
+.picture {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+img {
+    height: 500px;
+    width: 375px;
+}
+.picture img {
+    border: 10px solid seagreen;
 }
