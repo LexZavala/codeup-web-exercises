@@ -30,5 +30,12 @@
             "tool"
         ],
         "price": 10
+    }, {
+        "title": "Tape Measurer",
+        "quantity": 200,
+        "categories": [
+            "tool"
+        ],
+        "price": 5
     }
 ]
