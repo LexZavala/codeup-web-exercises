@@ -5,11 +5,33 @@
     <title>Ajax Blog</title>
 </head>
 <body>
+    <h1>BLOG</h1>
     <div id="posts"></div>
 
 
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    function loadBlog(){
+        $.ajax('data/blog.json').done(function (posts){
+            for (var i = 0; i < posts.length; i++) {
+                var postStr = "<div id='post-" + (i + 1) + "'>";
+                postStr += "<h1>" + posts[i].title + "</h1>";
+                postStr += "<p>" + posts[i].content + "</p>";
+                postStr += "<h3>" + posts[i].categories + "</h3>";
+                postStr += "<h5>" + posts[i].date + "</h5>";
+                postStr += "</div>";
+                $('#posts').append(postStr);
+            }
+        });
+    }
+
+    loadBlog();
+})();
+
+</script>
 </body>
 </html>
