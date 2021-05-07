@@ -3,8 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>MapBox API</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+
+        .restaurantFont {
+            font-family: 'Noto Serif JP', serif;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+<h1 style="text-align: center">MapBox API Exercises</h1>
+<h3 id="coordinates" style="text-align: center; margin-bottom: 2em;"></h3>
+<div style="display: flex; flex-direction: row; justify-content: center">
+    <div id='map' style='width: 700px; height: 600px; border: 1px solid lightslategray; border-radius: 17px; flex-direction: column'></div>
+</div>
 
+
+<script src="js/jQuery-3.6.0.min.js"></script>
+<script src="js/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<!--JAVASCRIPT-->
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGV4emF2YWxhIiwiYSI6ImNrb2VnNzR3czBhOGkycHMzd3NoeW1jdnYifQ.u5ISMGdLEU1QCy4rlCbOzw';
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // style URL
+        center: [-106.4850, 31.7619], // starting position [lng, lat]
+        zoom: 11 // starting zoom
+    });
+
+    var marker = new mapboxgl.Marker({
+        color: "#ffa200",
+    }).setLngLat([-106.4865, 31.7609])
+        .addTo(map);
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat(marker.getLngLat())
+        .setHTML("<h3 class='restaurantFont'>ELEMI Restaurant</h3>")
+        // .addTo(map);
+
+    // popup.addClassName('libertyFont'); took this off so that I could add it to the h3 instead, making it consistent
+
+    marker.setPopup(popup);
+    // marker.on('click', function (){
+    //     marker.setPopup(popup);
+    // });
+    $(marker).click(function (){
+        popup.addTo(map);
+    });
+    // marker.setPopup(popup);
+</script>
 </body>
 </html>
