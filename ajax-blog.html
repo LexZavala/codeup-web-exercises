@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <style>
+
+    </style>
 </head>
 <body>
     <h1>BLOG</h1>
@@ -18,10 +22,12 @@
     function loadBlog(){
         $.ajax('data/blog.json').done(function (posts){
             for (var i = 0; i < posts.length; i++) {
+                var filteredCategories = posts[i].categories;
+                var spacedCategories = filteredCategories.join(", ");
                 var postStr = "<div id='post-" + (i + 1) + "'>";
                 postStr += "<h1>" + posts[i].title + "</h1>";
                 postStr += "<p>" + posts[i].content + "</p>";
-                postStr += "<h3>" + posts[i].categories + "</h3>";
+                postStr += "<h4>" + spacedCategories + "</h4>";
                 postStr += "<h5>" + posts[i].date + "</h5>";
                 postStr += "</div>";
                 $('#posts').append(postStr);
