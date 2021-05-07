@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini MapBox Exercise 2 </title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+        .libertyFont {
+            font-family: 'Crimson Text', serif;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">Mini MapBox 2</h1>
+<h3 id="coordinates" style="text-align: center"></h3>
+<div style="display: flex; flex-direction: row; justify-content: center">
+    <div id='map' style='width: 600px; height: 400px; flex-direction: column'></div>
+</div>
+
+
+<script src="js/jQuery-3.6.0.min.js"></script>
+<script src="js/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<!--JAVASCRIPT-->
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGV4emF2YWxhIiwiYSI6ImNrb2VnNzR3czBhOGkycHMzd3NoeW1jdnYifQ.u5ISMGdLEU1QCy4rlCbOzw';
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // style URL
+        center: [-74.0060, 40.7128], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    var marker = new mapboxgl.Marker({
+        color: "#06d6a0",
+    }).setLngLat([-74.0445, 40.6892])
+        .addTo(map);
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat(marker.getLngLat())
+        .setHTML("<h3>Statue of Liberty</h3>")
+        .addTo(map);
+
+    popup.addClassName('libertyFont');
+
+    marker.setPopup(popup);
+    marker.setDraggable(true);
+    marker.on('dragend', function (){
+        $('#coordinates').html(marker.getLngLat().toString());
+        marker.setPopup();
+    });
+</script>
+</body>
+</html>
+
+<!--// Mini Exercise 2-->
+<!--// TODO: Create an HTML file called mapbox-2.html. In this file, create a map centered-->
+<!--// TODO: on New York with a marker on the Statue of Liberty. Add a popup to the Statue of-->
+<!--// TODO: Liberty marker with the text "Statue of Liberty".-->
+<!--// *BONUS - when the marker is dragged and released, display the coordinates in an H1.-->
+<!--New York = [-74.2179, 43.2994]-->
+<!--Statue of Liberty = [-74.0445, 40.6892]-->

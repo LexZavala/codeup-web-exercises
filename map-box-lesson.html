@@ -23,6 +23,26 @@
         center: [-98.4916, 29.4252], // starting position [lng, lat]
         zoom: 10 // starting zoom
     });
+
+    // Set options
+    var marker = new mapboxgl.Marker({
+        color: "green",
+        draggable: true
+    }).setLngLat([-98.4916, 29.4252])
+        .addTo(map);
+
+    marker.on('dragend', function (){
+        // alert('marker was moved');
+    });
+
+//    Instatiation of pop up object
+    var popup = new mapboxgl.Popup()
+        .setLngLat(marker.getLngLat())
+        .setHTML("<h3>Hello World!</h3>")
+        // .setMaxWidth("300px")
+        .addTo(map);
+
+marker.setPopup(popup);
 </script>
 </body>
 </html>
