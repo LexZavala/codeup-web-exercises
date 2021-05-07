@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--MAPBOX TAGS-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+<!---->
+</head>
+<body>
+<h1>Mini MapBox Exercise</h1>
+<div id='map' style='width: 400px; height: 300px;'></div>
+<button id="zoomIn">Zoom</button>
+<!--//TODO: Mini exercise #1 - Create an HTML file named mapbox-1.html. Create a map that is centered at the San Antonio Airport with the zoom set to 12.-->
+<!--//TODO: After 10 seconds, use a method found in the documentation to fly to the DFW Airport and change the map style to satellite streets.-->
+<!--//      *BONUS* Create a button labeled "Zoom In", and when the button is clicked, increases the zoom value by 1.\-->
+
+<script src="js/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGV4emF2YWxhIiwiYSI6ImNrb2VnNzR3czBhOGkycHMzd3NoeW1jdnYifQ.u5ISMGdLEU1QCy4rlCbOzw';
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // style URL
+        center: [-98.4683, 29.5312], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    // fly with default options to null island
+    // map.flyTo({center: [-98.4683, 29.5312], zoom: 9});
+    // using flyTo options
+    setTimeout(function (){
+        map.flyTo({
+            center: [-97.0403, 32.8998],
+            zoom: 12,
+            speed: 0.5,
+            curve: 1,
+            easing(t) {
+                return t;
+            }
+        });
+    }, 10000);
+</script>
+</body>
+</html>
+
