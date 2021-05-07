@@ -43,17 +43,14 @@
     var popup = new mapboxgl.Popup()
         .setLngLat(marker.getLngLat())
         .setHTML("<h3 class='restaurantFont'>ELEMI Restaurant</h3>")
-        // .addTo(map);
 
     // popup.addClassName('libertyFont'); took this off so that I could add it to the h3 instead, making it consistent
 
     marker.setPopup(popup);
-    // marker.on('click', function (){
-    //     marker.setPopup(popup);
+    // THIS IS NOT NEEDED , WE INSTEAD DELETED .addTo(map) out of the popup variable
+    // $(marker).click(function (){
+    //     popup.addTo(map);
     // });
-    $(marker).click(function (){
-        popup.addTo(map);
-    });
     // marker.setPopup(popup);
 </script>
 </body>
