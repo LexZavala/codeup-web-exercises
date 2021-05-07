@@ -40,10 +40,10 @@
 
     var popup = new mapboxgl.Popup()
         .setLngLat(marker.getLngLat())
-        .setHTML("<h3>Statue of Liberty</h3>")
+        .setHTML("<h3 class='libertyFont'>Statue of Liberty</h3>")
         .addTo(map);
 
-    popup.addClassName('libertyFont');
+    // popup.addClassName('libertyFont'); took this off so that I could add it to the h3 instead, making it consistent
 
     marker.setPopup(popup);
     marker.setDraggable(true);
