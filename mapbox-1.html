@@ -15,6 +15,7 @@
 <!--//TODO: After 10 seconds, use a method found in the documentation to fly to the DFW Airport and change the map style to satellite streets.-->
 <!--//      *BONUS* Create a button labeled "Zoom In", and when the button is clicked, increases the zoom value by 1.\-->
 
+<script src="js/jQuery-3.6.0.min.js"></script>
 <script src="js/keys.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <script>
@@ -40,6 +41,16 @@
             }
         });
     }, 10000);
+    // REMEMBER THIS FOR JAVA
+    $("#zoomIn").click(function(){
+        var currentZoom = map.getZoom();
+        map.setZoom(currentZoom + 1);
+    });
+    $("#zoomOut").click(function(){
+        var currentZoom = map.getZoom();
+        map.setZoom(currentZoom - 1);
+    });
+
 </script>
 </body>
 </html>
