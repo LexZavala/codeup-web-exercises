@@ -7,6 +7,30 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
 
+        body {
+            background: #141414;
+            /*background-image: url("img/map-vector.jpeg");*/
+            /*background-repeat: no-repeat;*/
+        }
+
+        header {
+            background-image: url("img/pexels-ella-olsson-1640774.jpg");
+            height: 8em;
+            background-size: 40%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .header-text {
+            color: white;
+            background: #141414;
+            width: 22% ;
+            text-align: center;
+            margin: auto;
+            border-radius: 10px;
+        }
+
         .restaurantFont {
             font-family: 'Noto Serif JP', serif;
             color: black;
@@ -15,7 +39,9 @@
     </style>
 </head>
 <body>
-<h1 style="text-align: center">MapBox API Exercises</h1>
+<header>
+    <h1 class="header-text" style="text-align: center">MapBox API Exercises</h1>
+</header>
 <h3 id="coordinates" style="text-align: center; margin-bottom: 2em;"></h3>
 <div style="display: flex; flex-direction: row; justify-content: center">
     <div id='map' style='width: 700px; height: 600px; border: 1px solid lightslategray; border-radius: 17px; flex-direction: column'></div>
@@ -32,21 +58,21 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // style URL
         center: [-106.4850, 31.7619], // starting position [lng, lat]
-        zoom: 11 // starting zoom
+        zoom: 10 // starting zoom
     });
 
     // ARRAY OF OBJECTS
     var favoriteLocations = [
-        {id: 1, name: 'ELEMI', location: [-106.4865, 31.7609], hours: '11am - 9pm' , specialty: 'Mid Century Modern'},
-        {id: 2, name: 'El Doggy', location: [-106.272159, 31.758007], hours: '11am - 8pm' , specialty: 'Mexican style hotdogs'},
-        {id: 3, name: 'Central Cafe', location: [-106.488399, 31.758437], hours: '11am - 11pm' , specialty: 'Fine Dinning'}
+        {id: 1, name: 'ELEMI', location: [-106.4865, 31.7609], hours: '11am - 9pm' , specialty: 'Mid Century Modern', markerColor: '#ffa200'},
+        {id: 2, name: 'El Doggy', location: [-106.272159, 31.758007], hours: '11am - 8pm' , specialty: 'Mexican style hotdogs', markerColor:'#89c2d9'},
+        {id: 3, name: 'Central Cafe', location: [-106.488399, 31.758437], hours: '11am - 11pm' , specialty: 'Fine Dinning', markerColor:'#99d98c'}
         ];
 
 
     favoriteLocations.forEach(function(favorite) {
         // MARKERS
         var marker = new mapboxgl.Marker({
-            color: "#ffa200",
+            color: favorite.markerColor,
         }).setLngLat(favorite.location)
             .addTo(map);
 
@@ -55,7 +81,7 @@
         //
         var popup = new mapboxgl.Popup()
             .setLngLat(marker.getLngLat())
-            .setHTML("<h3 class='restaurantFont'>" + favorite.name + "</h3>")
+            .setHTML("<h3 class='restaurantFont' style='text-align: center; font-weight: bold'>" + favorite.name + "</h3>" + "<h4 class='restaurantFont'>" + favorite.specialty + "</h4>" +"<h4 class='restaurantFont' style='text-align: center'>" + favorite.hours + "</h4>");
             // .setHTML("<h4 class='restaurantFont'>" + favorite.specialty + "</h4>")
             // .setHTML("<h4 class='restaurantFont'>" + favorite.hours + "</h4>");
 
