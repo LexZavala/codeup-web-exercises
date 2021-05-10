@@ -35,18 +35,34 @@
         zoom: 11 // starting zoom
     });
 
-    var marker = new mapboxgl.Marker({
-        color: "#ffa200",
-    }).setLngLat([-106.4865, 31.7609])
-        .addTo(map);
+    // ARRAY OF OBJECTS
+    var favoriteLocations = [
+        {id: 1, name: 'ELEMI', location: [-106.4865, 31.7609], hours: '11am - 9pm' , specialty: 'Mid Century Modern'},
+        {id: 2, name: 'El Doggy', location: [-106.272159, 31.758007], hours: '11am - 8pm' , specialty: 'Mexican style hotdogs'},
+        {id: 3, name: 'Central Cafe', location: [-106.488399, 31.758437], hours: '11am - 11pm' , specialty: 'Fine Dinning'}
+        ];
 
-    var popup = new mapboxgl.Popup()
-        .setLngLat(marker.getLngLat())
-        .setHTML("<h3 class='restaurantFont'>ELEMI Restaurant</h3>")
 
-    // popup.addClassName('libertyFont'); took this off so that I could add it to the h3 instead, making it consistent
+    favoriteLocations.forEach(function(favorite) {
+        // MARKERS
+        var marker = new mapboxgl.Marker({
+            color: "#ffa200",
+        }).setLngLat(favorite.location)
+            .addTo(map);
 
-    marker.setPopup(popup);
+
+
+        //
+        var popup = new mapboxgl.Popup()
+            .setLngLat(marker.getLngLat())
+            .setHTML("<h3 class='restaurantFont'>" + favorite.name + "</h3>")
+            // .setHTML("<h4 class='restaurantFont'>" + favorite.specialty + "</h4>")
+            // .setHTML("<h4 class='restaurantFont'>" + favorite.hours + "</h4>");
+
+        // popup.addClassName('libertyFont'); took this off so that I could add it to the h3 instead, making it consistent
+        marker.setPopup(popup);
+    });
+
     // THIS IS NOT NEEDED , WE INSTEAD DELETED .addTo(map) out of the popup variable
     // $(marker).click(function (){
     //     popup.addTo(map);
