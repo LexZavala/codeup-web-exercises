@@ -1,52 +1,75 @@
 "use strict";
 
-$.ajax("https://api.openweathermap.org/data/2.5/onecall" , {
-    data: {
-        APPID: WEATHER_MAP_TOKEN,
-        lon: -98.4936,
-        lat: 29.4241,
-        units: "imperial",
-        exclude: "minutely,hourly,current"
-    }
-}).done(function (resp){
-    console.log(resp);
-    // Date sorting variables
-    var today = resp.daily[0];
-    var todayDate = new Date(today.dt * 1000);
-    var shortDayName = todayDate.toLocaleString('en-us', {weekday: 'long'});
-    var shortMonth = todayDate.toLocaleString('en-us', {month: 'long'});
-    var shortDayNum = todayDate.toLocaleString('en-us', {day: 'numeric'});
-    var shortYear = todayDate.toLocaleString("en-US", {year: "numeric"})
-    var organizedDate = shortDayName + ", " + shortMonth + " " + shortDayNum + " " + shortYear;
 
-    // Rest of variables
-    var todayOverallTemp = today.temp;
-    var currentTemp = todayOverallTemp.day.toFixed() + "°F";
-    var maxTemp = todayOverallTemp.max.toFixed() + "°F";
-    var minTemp = todayOverallTemp.min.toFixed() + "°F";
-    var todayDescription = today.weather[0].description;
-    var humidity = today.humidity + "%";
-    var feelsLike = today.feels_like;
-    var feelsLikeTemp = feelsLike.day.toFixed() + "°F";
+function renderCards() {
+    var html = '<div class="card row" style="width: 18rem;">';
+    html += '<div class="col">';
+    html += '<div class="card-body"><h5 class="card-title" id="date"></h5><p class="card-text" id="description"></p>  </div>';
+    html += '<ul class="list-group list-group-flush">';
+    html += '<li class="list-group-item" id="temperature"></li>';
+    html += '<li class="list-group-item" id="maxAndMin"></li>';
+    html += '<li class="list-group-item" id="feelsLike"></li>';
+    html += '</ul>';
+    html += '</div>';
+    html += '</div>';
+    return html;
+}
 
-    function renderWeather() {
-        $('#date').html(organizedDate);
-        $('#description').html(todayDescription);
-        $('#temperature').html(currentTemp);
-        $('#maxAndMin').html("Max: "+ maxTemp + " Min: " + minTemp);
-        $('#feelsLike').html("Feels like: " + feelsLikeTemp);
-    }
+function weatherPanels(){
+    $.ajax("https://api.openweathermap.org/data/2.5/onecall", {
+        data: {
+            APPID: WEATHER_MAP_TOKEN,
+            lon: -98.4936,
+            lat: 29.4241,
+            units: "imperial",
+            exclude: "minutely,hourly,current"
+        }
+    }).done(function (resp) {
+        console.log(resp);
+        for (var i = 0; i <= 4; i++) {
+            // Date sorting variables
+            var today = resp.daily[i];
+            console.log(today);
+            var todayDate = new Date(today.dt * 1000);
+            var shortDayName = todayDate.toLocaleString('en-us', {weekday: 'long'});
+            var shortMonth = todayDate.toLocaleString('en-us', {month: 'long'});
+            var shortDayNum = todayDate.toLocaleString('en-us', {day: 'numeric'});
+            var shortYear = todayDate.toLocaleString("en-US", {year: "numeric"})
+            var organizedDate = shortDayName + ", " + shortMonth + " " + shortDayNum + " " + shortYear;
 
-    renderWeather();
+            // Rest of variables
+            var todayOverallTemp = today.temp;
+            var currentTemp = todayOverallTemp.day.toFixed() + "°F";
+            var maxTemp = todayOverallTemp.max.toFixed() + "°F";
+            var minTemp = todayOverallTemp.min.toFixed() + "°F";
+            var todayDescription = today.weather[0].description;
+            var humidity = today.humidity + "%";
+            var feelsLike = today.feels_like;
+            var feelsLikeTemp = feelsLike.day.toFixed() + "°F";
 
-    console.log(todayDate);
-    console.log(todayOverallTemp);
-    console.log(currentTemp);
-    console.log(todayDescription);
-    console.log(humidity);
-    console.log(feelsLike);
-    console.log(feelsLikeTemp);
-});
+
+            function renderWeather() {
+                $('#date').html(organizedDate);
+                $('#description').html(todayDescription);
+                $('#temperature').html(currentTemp);
+                $('#maxAndMin').html("Max: " + maxTemp + " Min: " + minTemp);
+                $('#feelsLike').html("Feels like: " + feelsLikeTemp);
+            }
+            renderCards();
+            renderWeather();
+        }
+
+        // console.log(todayDate);
+        // console.log(todayOverallTemp);
+        // console.log(currentTemp);
+        // console.log(todayDescription);
+        // console.log(humidity);
+        // console.log(feelsLike);
+        // console.log(feelsLikeTemp);
+    });
+}
+
+weatherPanels();
 
 //     ?lat=33.44&lon=-94.04&exclude=hourly,minutely,current&appid=" + WEATHER_MAP_TOKEN).done(function (resp){
 //     console.log(resp);
