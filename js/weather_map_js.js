@@ -49,13 +49,12 @@ function weatherPanels(coordinates){
         for (var i = 0; i <= 4; i++) {
             // Date sorting variables
             var today = resp.daily[i];
-            console.log(today);
             var todayDate = new Date(today.dt * 1000);
             var shortDayName = todayDate.toLocaleString('en-us', {weekday: 'long'});
             var shortMonth = todayDate.toLocaleString('en-us', {month: 'long'});
             var shortDayNum = todayDate.toLocaleString('en-us', {day: 'numeric'});
             var shortYear = todayDate.toLocaleString("en-US", {year: "numeric"})
-            var organizedDate = shortDayName + ", " + shortMonth + " " + shortDayNum + " " + shortYear;
+            var organizedDate = shortDayName + "<br>" + shortMonth + " " + shortDayNum + " " + shortYear;
 
             // Rest of variables
             var todayOverallTemp = today.temp;
@@ -66,28 +65,44 @@ function weatherPanels(coordinates){
             var humidity = today.humidity + "%";
             var feelsLike = today.feels_like;
             var feelsLikeTemp = feelsLike.day.toFixed() + "°F";
-            var bothMaxMin = "Max: " + maxTemp + " Min: " + minTemp
+            var bothMaxMin = "Max: " + maxTemp + "<br>" + " Min: " + minTemp
 
 
 
             function renderWeather() {
                 $('#allWeather').append(
                     '<div class="card col-2 " style="width: 18rem;">'
+                    + '<div class="weatherIcon"></div>'
                     + '<div class=""><div class="card-body"><h5 class="card-title date" id="date">' + organizedDate
-                    + '</h5><p class="card-text description" id="description">'
+                    + '</h5><p class="card-text description align" id="description">'
                     + todayDescription + '</p></div>'
                     + '<ul class="list-group list-group-flush">'
                     + '<li class="list-group-item temperature">' + currentTemp + '</li>'
                     + '<li class="list-group-item maxAndMin">' + bothMaxMin + '</li>'
+                    + '<li class="list-group-item humidity">'+ "humidity: " + humidity + '</li>'
                     + '<li class="list-group-item feelsLike">'+ "Feels Like: " + feelsLikeTemp + '</li>'
                     + '</ul>'
                     + '</div>'
                     + '</div>'
                 );
+                console.log(todayDescription);
+                if (todayDescription.includes('rain')){
+                    $('.weather').addClass('fas fa-cloud-rain');
+                }
 
             }
-            renderWeather();
+            renderWeather()
         }
+        $('.weatherIcon').each(function (){
+            if ($(this).next().children().children().includes('rain')) {
+                $(this).html('<i class="fas fa-cloud-rain" id="icon"></i>');
+            }
+        })
+        // $('.rain').toggleClass('rain')
+        // if (todayDescription.includes('rain')){
+        //     $(this).toggleClass('rain')
+        // }
+        // $(".rain").html('<i class="fas fa-cloud-rain"></i>');
 
         // console.log(todayDate);
         // console.log(todayOverallTemp);

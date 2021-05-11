@@ -1,0 +1,20 @@
+
+.header {
+    margin-bottom: 2em;
+}
+#map {
+    border-radius: 12px;
+}
+
+.card {
+    border-radius: 12px;
+
+}
+
+li, h5, .align {
+    text-align: center;
+}
+
+.align {
+    font-style: italic;
+}
