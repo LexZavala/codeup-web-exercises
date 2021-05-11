@@ -1,13 +1,45 @@
 "use strict";
 
+mapboxgl.accessToken = 'pk.eyJ1IjoibGV4emF2YWxhIiwiYSI6ImNrb2VnNzR3czBhOGkycHMzd3NoeW1jdnYifQ.u5ISMGdLEU1QCy4rlCbOzw';
+var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // style URL
+    center: [-98.4936, 29.4241], // starting position [lng, lat]
+    zoom: 10 // starting zoom
+});
 
+var marker = new mapboxgl.Marker({
+    color: "#06d6a0",
+}).setLngLat([-98.4936, 29.4241])
+    .addTo(map);
 
-function weatherPanels(){
+var popup = new mapboxgl.Popup()
+    .setLngLat(marker.getLngLat())
+    .setHTML("<h3 class='libertyFont'>Statue of Liberty</h3>")
+    // .addTo(map);
+
+// popup.addClassName('libertyFont'); took this off so that I could add it to the h3 instead, making it consistent
+
+marker.setPopup(popup);
+marker.setDraggable(true);
+
+marker.on('dragend', function (){
+    var newCoords = marker.getLngLat().toArray();
+    console.log(newCoords);
+    $('#allWeather').empty();
+    weatherPanels(newCoords);
+    marker.setPopup();
+});
+
+var coords = marker.getLngLat().toArray();
+console.log(coords);
+
+function weatherPanels(coordinates){
     $.ajax("https://api.openweathermap.org/data/2.5/onecall", {
         data: {
             APPID: WEATHER_MAP_TOKEN,
-            lon: -98.4936,
-            lat: 29.4241,
+            lon: coordinates[0],
+            lat: coordinates[1],
             units: "imperial",
             exclude: "minutely,hourly,current"
         }
@@ -67,7 +99,7 @@ function weatherPanels(){
     });
 }
 
-weatherPanels();
+weatherPanels(coords);
 
 //     ?lat=33.44&lon=-94.04&exclude=hourly,minutely,current&appid=" + WEATHER_MAP_TOKEN).done(function (resp){
 //     console.log(resp);
