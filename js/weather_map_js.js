@@ -1,19 +1,6 @@
 "use strict";
 
 
-function renderCards() {
-    var html = '<div class="card row" style="width: 18rem;">';
-    html += '<div class="col">';
-    html += '<div class="card-body"><h5 class="card-title" id="date"></h5><p class="card-text" id="description"></p>  </div>';
-    html += '<ul class="list-group list-group-flush">';
-    html += '<li class="list-group-item" id="temperature"></li>';
-    html += '<li class="list-group-item" id="maxAndMin"></li>';
-    html += '<li class="list-group-item" id="feelsLike"></li>';
-    html += '</ul>';
-    html += '</div>';
-    html += '</div>';
-    return html;
-}
 
 function weatherPanels(){
     $.ajax("https://api.openweathermap.org/data/2.5/onecall", {
@@ -26,6 +13,7 @@ function weatherPanels(){
         }
     }).done(function (resp) {
         console.log(resp);
+        var html = '';
         for (var i = 0; i <= 4; i++) {
             // Date sorting variables
             var today = resp.daily[i];
@@ -46,16 +34,26 @@ function weatherPanels(){
             var humidity = today.humidity + "%";
             var feelsLike = today.feels_like;
             var feelsLikeTemp = feelsLike.day.toFixed() + "°F";
+            var bothMaxMin = "Max: " + maxTemp + " Min: " + minTemp
+
 
 
             function renderWeather() {
-                $('#date').html(organizedDate);
-                $('#description').html(todayDescription);
-                $('#temperature').html(currentTemp);
-                $('#maxAndMin').html("Max: " + maxTemp + " Min: " + minTemp);
-                $('#feelsLike').html("Feels like: " + feelsLikeTemp);
+                $('#allWeather').append(
+                    '<div class="card col-2 " style="width: 18rem;">'
+                    + '<div class=""><div class="card-body"><h5 class="card-title date" id="date">' + organizedDate
+                    + '</h5><p class="card-text description" id="description">'
+                    + todayDescription + '</p></div>'
+                    + '<ul class="list-group list-group-flush">'
+                    + '<li class="list-group-item temperature">' + currentTemp + '</li>'
+                    + '<li class="list-group-item maxAndMin">' + bothMaxMin + '</li>'
+                    + '<li class="list-group-item feelsLike">'+ "Feels Like: " + feelsLikeTemp + '</li>'
+                    + '</ul>'
+                    + '</div>'
+                    + '</div>'
+                );
+
             }
-            renderCards();
             renderWeather();
         }
 
