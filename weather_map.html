@@ -14,7 +14,17 @@
     </div>
     <div id="allWeather" class="container-fluid row d-flex justify-content-around">
     </div>
-    <div class="mt-5" style="display: flex; flex-direction: row; justify-content: center">
+    <form class="mt-5">
+        <div class="">
+            <label for="searchInput" class="form-label">Enter location name</label>
+            <div class="row">
+                <input type="text" class="form-control col-11" id="searchInput">
+                <button type="button" class="btn btn-primary col-1" id="searchButton"><i class="fas fa-search-location"></i></button>
+            </div>
+            <div id="emailHelp" class="form-text text-muted">I can show you the world....'s weather.</div>
+        </div>
+    </form>
+    <div class="mt-4" style="display: flex; flex-direction: row; justify-content: center">
         <div id='map' style='width: 1000px; height: 600px; flex-direction: column'></div>
     </div>
 
@@ -22,6 +32,7 @@
 
     <script src="js/jQuery-3.6.0.min.js"></script>
     <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
     <script src="js/weather_map_js.js"></script>
 </body>

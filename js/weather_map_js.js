@@ -1,5 +1,5 @@
 "use strict";
-
+// MAPBOX JS
 mapboxgl.accessToken = 'pk.eyJ1IjoibGV4emF2YWxhIiwiYSI6ImNrb2VnNzR3czBhOGkycHMzd3NoeW1jdnYifQ.u5ISMGdLEU1QCy4rlCbOzw';
 var map = new mapboxgl.Map({
     container: 'map', // container ID
@@ -18,8 +18,6 @@ var popup = new mapboxgl.Popup()
     .setHTML("<h3 class='libertyFont'>Statue of Liberty</h3>")
     // .addTo(map);
 
-// popup.addClassName('libertyFont'); took this off so that I could add it to the h3 instead, making it consistent
-
 marker.setPopup(popup);
 marker.setDraggable(true);
 
@@ -34,6 +32,13 @@ marker.on('dragend', function (){
 var coords = marker.getLngLat().toArray();
 console.log(coords);
 
+
+
+// geocode("Univeristy of Texas at El Paso", MAPBOX_ACCESS_TOKEN).then(function (results){
+//     console.log(results);
+// });
+
+// WEATHER MAP JS
 function weatherPanels(coordinates){
     $.ajax("https://api.openweathermap.org/data/2.5/onecall", {
         data: {
@@ -68,7 +73,6 @@ function weatherPanels(coordinates){
             var bothMaxMin = "Max: " + maxTemp + "<br>" + " Min: " + minTemp
 
 
-
             function renderWeather() {
                 $('#allWeather').append(
                     '<div class="card col-2 " style="width: 18rem;">'
@@ -79,25 +83,23 @@ function weatherPanels(coordinates){
                     + '<ul class="list-group list-group-flush">'
                     + '<li class="list-group-item temperature">' + currentTemp + '</li>'
                     + '<li class="list-group-item maxAndMin">' + bothMaxMin + '</li>'
-                    + '<li class="list-group-item humidity">'+ "humidity: " + humidity + '</li>'
-                    + '<li class="list-group-item feelsLike">'+ "Feels Like: " + feelsLikeTemp + '</li>'
+                    + '<li class="list-group-item humidity">' + "humidity: " + humidity + '</li>'
+                    + '<li class="list-group-item feelsLike">' + "Feels Like: " + feelsLikeTemp + '</li>'
                     + '</ul>'
                     + '</div>'
                     + '</div>'
                 );
                 console.log(todayDescription);
-                if (todayDescription.includes('rain')){
-                    $('.weather').addClass('fas fa-cloud-rain');
-                }
 
             }
-            renderWeather()
+            renderWeather();
         }
-        $('.weatherIcon').each(function (){
-            if ($(this).next().children().children().includes('rain')) {
-                $(this).html('<i class="fas fa-cloud-rain" id="icon"></i>');
-            }
-        })
+        //ICON POSSIBLE SYNTAX
+        // if (todayDescription.includes('rain')){
+        //     $('.weather').addClass('fas fa-cloud-rain');
+        // }
+
+
         // $('.rain').toggleClass('rain')
         // if (todayDescription.includes('rain')){
         //     $(this).toggleClass('rain')
@@ -116,21 +118,23 @@ function weatherPanels(coordinates){
 
 weatherPanels(coords);
 
-//     ?lat=33.44&lon=-94.04&exclude=hourly,minutely,current&appid=" + WEATHER_MAP_TOKEN).done(function (resp){
-//     console.log(resp);
-//     var today = resp.daily[0]
-//     var todayDate = new Date(today.dt * 1000);
-//     console.log(todayDate);
-// });
+// GEOCODE JS
+function searchLocation (){
+    var input = $('#searchInput').val();
+    geocode(input, MAPBOX_ACCESS_TOKEN).then(function (searchCoords){
+        // console.log(searchCoords);
+        $('#allWeather').empty();
+        weatherPanels(searchCoords);
+        map.flyTo({
+            center: searchCoords,
+            zoom: 12,
+            speed: 0.5,
+            curve: 1,
+            easing(t) {
+                return t;
+            }
+        });
+    });
+}
 
-// var date = new Date(dailyForecast.dt * 1000);
-// var human = date.toLocaleString();
-// console.log(human);
-// var humanDay = todayDate.toLocaleString('en-us', {weekday: 'long'});
-// console.log(humanDay);
-// var humanMonth = todayDate.toLocaleString('en-us', {month: 'long'});
-// console.log(humanMonth);
-// var humanDate = todayDate.toLocaleString('en-us', {day: 'numeric'});
-// console.log(humanDate)
-// var humanYear = todayDate.toLocaleString("en-US", {year: "numeric"})
-// console.log(humanYear)
+$('#searchButton').click(searchLocation);

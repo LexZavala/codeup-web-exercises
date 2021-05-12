@@ -18,3 +18,17 @@ li, h5, .align {
 .align {
     font-style: italic;
 }
+
+form {
+    width: 970px;
+    margin: 0 auto;
+}
+
+button {
+    padding: 5px;
+ }
+
+input {
+    /*background: url(images/comment-author.gif) no-repeat scroll 7px 7px;*/
+    /*padding-left:30px;*/
+}
