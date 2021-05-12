@@ -3,7 +3,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibGV4emF2YWxhIiwiYSI6ImNrb2VnNzR3czBhOGkycHMzd3NoeW1jdnYifQ.u5ISMGdLEU1QCy4rlCbOzw';
 var map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // style URL
+    style: 'mapbox://styles/lexzavala/ckolpd7o3245g18qpih9du3on', // style URL
     center: [-98.4936, 29.4241], // starting position [lng, lat]
     zoom: 10 // starting zoom
 });
@@ -15,7 +15,7 @@ var marker = new mapboxgl.Marker({
 
 var popup = new mapboxgl.Popup()
     .setLngLat(marker.getLngLat())
-    .setHTML("<h3 class='libertyFont'>Statue of Liberty</h3>")
+    .setHTML("<h5 class=''>San Antonio</h5>")
     // .addTo(map);
 
 marker.setPopup(popup);
@@ -75,7 +75,7 @@ function weatherPanels(coordinates){
 
             function renderWeather() {
                 $('#allWeather').append(
-                    '<div class="card col-2 " style="width: 18rem;">'
+                    '<div class="card col-2 grow" id="cardContainer">'
                     + '<div class="weatherIcon"></div>'
                     + '<div class=""><div class="card-body"><h5 class="card-title date" id="date">' + organizedDate
                     + '</h5><p class="card-text description align" id="description">'
@@ -93,13 +93,14 @@ function weatherPanels(coordinates){
 
             }
             renderWeather();
+
         }
         //ICON POSSIBLE SYNTAX
         // if (todayDescription.includes('rain')){
         //     $('.weather').addClass('fas fa-cloud-rain');
         // }
-
-
+        //
+        //
         // $('.rain').toggleClass('rain')
         // if (todayDescription.includes('rain')){
         //     $(this).toggleClass('rain')
@@ -127,13 +128,18 @@ function searchLocation (){
         weatherPanels(searchCoords);
         map.flyTo({
             center: searchCoords,
-            zoom: 12,
-            speed: 0.5,
+            zoom: 9,
+            speed: 3,
             curve: 1,
             easing(t) {
                 return t;
             }
         });
+        marker.remove();
+        var newMarker = new mapboxgl.Marker({
+            color: "#06d6a0",
+        }).setLngLat(searchCoords)
+            .addTo(map);
     });
 }
 

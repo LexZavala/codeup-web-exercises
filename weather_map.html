@@ -8,23 +8,21 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
     <script src="https://kit.fontawesome.com/1e8ed50084.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="container-fluid">
     <div class="header row d-flex justify-content-center">
         <h1>Weather Map Project</h1>
     </div>
-    <div id="allWeather" class="container-fluid row d-flex justify-content-around">
+    <div id="allWeather" class="row d-flex justify-content-around">
     </div>
     <form class="mt-5">
         <div class="">
-            <label for="searchInput" class="form-label">Enter location name</label>
             <div class="row">
-                <input type="text" class="form-control col-11" id="searchInput">
+                <input type="text" class="form-control col-11" id="searchInput" placeholder="Enter location you want weather from">
                 <button type="button" class="btn btn-primary col-1" id="searchButton"><i class="fas fa-search-location"></i></button>
             </div>
-            <div id="emailHelp" class="form-text text-muted">I can show you the world....'s weather.</div>
         </div>
     </form>
-    <div class="mt-4" style="display: flex; flex-direction: row; justify-content: center">
+    <div class="mt-4" style="display: flex; flex-direction: row; justify-content: center" id="mapContainer">
         <div id='map' style='width: 1000px; height: 600px; flex-direction: column'></div>
     </div>
 

@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: whitesmoke;
+}
+
+h1 {
+
+    margin-top: .7em;
+}
+
+h5 {
+    font-weight: bold;
+}
 
 .header {
     margin-bottom: 2em;
@@ -6,8 +20,22 @@
     border-radius: 12px;
 }
 
+#allWeather {
+/*    padding-right: 15px;*/
+/*    margin-right: 15px;*/
+    margin: 0 auto;
+    width: 100%;
+}
+
+#cardContainer {
+    padding: 10px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
 .card {
     border-radius: 12px;
+    padding-right: 0;
+    margin-right: 0;
 
 }
 
@@ -24,11 +52,21 @@ form {
     margin: 0 auto;
 }
 
-button {
+#searchButton {
     padding: 5px;
+    border-radius: 0 5px 5px 0;
+
  }
 
-input {
+#searchInput {
     /*background: url(images/comment-author.gif) no-repeat scroll 7px 7px;*/
     /*padding-left:30px;*/
+    border-radius: 5px 0 0 5px;
 }
+
+#mapContainer {
+    width: 100%;
+}
+
+.grow { transition: all .4s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
