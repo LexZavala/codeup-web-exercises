@@ -25,18 +25,13 @@ marker.on('dragend', function (){
     var newCoords = marker.getLngLat().toArray();
     console.log(newCoords);
     $('#allWeather').empty();
+    $('#currentDisplay').empty()
     weatherPanels(newCoords);
     marker.setPopup();
 });
 
 var coords = marker.getLngLat().toArray();
 console.log(coords);
-
-
-
-// geocode("Univeristy of Texas at El Paso", MAPBOX_ACCESS_TOKEN).then(function (results){
-//     console.log(results);
-// });
 
 // WEATHER MAP JS
 function weatherPanels(coordinates){
@@ -46,13 +41,15 @@ function weatherPanels(coordinates){
             lon: coordinates[0],
             lat: coordinates[1],
             units: "imperial",
-            exclude: "minutely,hourly,current"
+            exclude: "minutely,hourly"
         }
     }).done(function (resp) {
         console.log(resp);
-        var html = '';
+        var currentDay = resp.current.temp.toFixed() + '°F';
+        console.log(currentDay);
         for (var i = 0; i <= 4; i++) {
             // Date sorting variables
+
             var today = resp.daily[i];
             var todayDate = new Date(today.dt * 1000);
             var shortDayName = todayDate.toLocaleString('en-us', {weekday: 'long'});
@@ -89,42 +86,44 @@ function weatherPanels(coordinates){
                     + '</div>'
                     + '</div>'
                 );
-                console.log(todayDescription);
-
             }
+
             renderWeather();
-
         }
-        //ICON POSSIBLE SYNTAX
-        // if (todayDescription.includes('rain')){
-        //     $('.weather').addClass('fas fa-cloud-rain');
-        // }
-        //
-        //
-        // $('.rain').toggleClass('rain')
-        // if (todayDescription.includes('rain')){
-        //     $(this).toggleClass('rain')
-        // }
-        // $(".rain").html('<i class="fas fa-cloud-rain"></i>');
+        function renderCurrent (){
+            $('#currentDisplay').append(
+                '<div class="col-10 currently" id="subHeader">' + '<h3 id="location"> Currently in San Antonio:</h3>' + '<div class="content">' + '<h2 id="numberTemp">' + currentDay + '</h2>'
+                + '<h2>' + currentDay + '</h2>' + '</div>'
+            );
+        }
+        renderCurrent();
 
-        // console.log(todayDate);
-        // console.log(todayOverallTemp);
-        // console.log(currentTemp);
-        // console.log(todayDescription);
-        // console.log(humidity);
-        // console.log(feelsLike);
-        // console.log(feelsLikeTemp);
+        //ICON POSSIBLE SYNTAX
+        //         // if (todayDescription.includes('rain')){
+        //         //     $('.weather').addClass('fas fa-cloud-rain');
+        //         // }
+        //         //
+        //         //
+        //         // $('.rain').toggleClass('rain')
+        //         // if (todayDescription.includes('rain')){
+        //         //     $(this).toggleClass('rain')
+        //         // }
+        //         // $(".rain").html('<i class="fas fa-cloud-rain"></i>');
+
     });
 }
+
+
 
 weatherPanels(coords);
 
 // GEOCODE JS
 function searchLocation (){
     var input = $('#searchInput').val();
+    $('#allWeather').empty();
     geocode(input, MAPBOX_ACCESS_TOKEN).then(function (searchCoords){
         // console.log(searchCoords);
-        $('#allWeather').empty();
+        $('#currentDisplay').empty();
         weatherPanels(searchCoords);
         map.flyTo({
             center: searchCoords,
@@ -135,8 +134,8 @@ function searchLocation (){
                 return t;
             }
         });
-        marker.remove();
-        var newMarker = new mapboxgl.Marker({
+        // marker.remove();
+        marker = new mapboxgl.Marker({
             color: "#06d6a0",
         }).setLngLat(searchCoords)
             .addTo(map);

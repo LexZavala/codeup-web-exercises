@@ -12,18 +12,20 @@
     <div class="header row d-flex justify-content-center">
         <h1>Weather Map Project</h1>
     </div>
-    <div id="allWeather" class="row d-flex justify-content-around">
-    </div>
-    <form class="mt-5">
-        <div class="">
-            <div class="row">
-                <input type="text" class="form-control col-11" id="searchInput" placeholder="Enter location you want weather from">
-                <button type="button" class="btn btn-primary col-1" id="searchButton"><i class="fas fa-search-location"></i></button>
+    <div id="allWeather" class="row d-flex justify-content-around"></div>
+    <div class="row d-flex justify-content-center" id="currentDisplay"></div>
+    <div id="formAndMap">
+        <form class="mt-4">
+            <div class="">
+                <div class="row">
+                    <input type="text" class="form-control col-11" id="searchInput" placeholder="Enter location you want weather from">
+                    <button type="button" class="btn btn-primary col-1" id="searchButton"><i class="fas fa-search-location"></i></button>
+                </div>
             </div>
+        </form>
+        <div class="mt-4" style="display: flex; flex-direction: row; justify-content: center" id="mapContainer">
+            <div id='map' style='width: 1000px; height: 600px; flex-direction: column'></div>
         </div>
-    </form>
-    <div class="mt-4" style="display: flex; flex-direction: row; justify-content: center" id="mapContainer">
-        <div id='map' style='width: 1000px; height: 600px; flex-direction: column'></div>
     </div>
 
 

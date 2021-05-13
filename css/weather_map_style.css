@@ -47,6 +47,31 @@ li, h5, .align {
     font-style: italic;
 }
 
+#currentDisplay {
+    margin-top: 2.5em;
+    margin-left: 54px;
+}
+
+.currently {
+    font-size: 2em;
+    display: block;
+}
+
+#sub-header {
+    font-size: 10px;
+}
+
+#location {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#numberTemp {
+    font-weight: bold;
+    font-size: 3em;
+    color: transparent;
+}
+
 form {
     width: 970px;
     margin: 0 auto;
@@ -68,5 +93,42 @@ form {
     width: 100%;
 }
 
+#formAndMap {
+    margin-top: 9em;
+}
+
+.content {
+    position: relative;
+
+}
+
+.content h2 {
+    position: absolute;
+    /*transform: translate(-50%, -50%);*/
+}
+
+.content h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 3px #ADD8E6 ;
+}
+
+.content h2:nth-child(2){
+    font-weight: bold;
+    font-size: 3em;
+    color: #ADD8E6;
+    animation: animate 4s ease-in-out infinite;
+}
+
 .grow { transition: all .4s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
+
+@keyframes animate {
+    0%, 100% {
+        clip-path: polygon(0 38%, 19% 39%, 35% 47%, 55% 53%, 72% 54%, 86% 51%, 100% 42%, 99% 99%, 1% 99%);
+    }
+    50%{
+        clip-path: polygon(0 60%, 16% 61%, 35% 64%, 57% 61%, 71% 50%, 84% 43%, 100% 42%, 99% 99%, 1% 99%);
+
+    }
+
+}
