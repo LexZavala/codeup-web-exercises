@@ -91,10 +91,23 @@ function weatherPanels(coordinates){
             renderWeather();
         }
         function renderCurrent (){
+            // var input = $('#searchInput').val();
             $('#currentDisplay').append(
-                '<div class="col-10 currently" id="subHeader">' + '<h3 id="location"> Currently in San Antonio:</h3>' + '<div class="content">' + '<h2 id="numberTemp">' + currentDay + '</h2>'
-                + '<h2>' + currentDay + '</h2>' + '</div>'
+                '<div class="col-10 currently" id="subHeader">' + '<h3 id="location"> Currently:</h3>' + '<div class="content">' + '<h2 id="numberTemp">' + currentDay + '</h2>'
+                + '<h2 id="second">' + currentDay + '</h2>' + '</div>'
             );
+
+
+            var splitTemp = currentDay.split("°");
+            var numberOnly = splitTemp[0];
+            if (Number(numberOnly) >= 80) {
+                $('#numberTemp').css('-webkit-text-stroke',  '3px #FF7F50');
+                $('#second').css('color',  '#FF7F50');
+            }
+            if (Number(numberOnly) <= 60) {
+                $('#numberTemp').css('-webkit-text-stroke',  '3px #c1d3fe');
+                $('#second').css('color',  '#c1d3fe');
+            }
         }
         renderCurrent();
 
@@ -124,7 +137,9 @@ function searchLocation (){
     geocode(input, MAPBOX_ACCESS_TOKEN).then(function (searchCoords){
         // console.log(searchCoords);
         $('#currentDisplay').empty();
+        marker.setLngLat(searchCoords);
         weatherPanels(searchCoords);
+
         map.flyTo({
             center: searchCoords,
             zoom: 9,
@@ -134,11 +149,6 @@ function searchLocation (){
                 return t;
             }
         });
-        // marker.remove();
-        marker = new mapboxgl.Marker({
-            color: "#06d6a0",
-        }).setLngLat(searchCoords)
-            .addTo(map);
     });
 }
 
