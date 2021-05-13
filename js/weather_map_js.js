@@ -125,8 +125,6 @@ function weatherPanels(coordinates){
     });
 }
 
-
-
 weatherPanels(coords);
 
 // GEOCODE JS
