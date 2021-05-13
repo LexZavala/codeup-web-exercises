@@ -129,7 +129,7 @@ function searchLocation (){
         map.flyTo({
             center: searchCoords,
             zoom: 9,
-            speed: 3,
+            speed: 2.5,
             curve: 1,
             easing(t) {
                 return t;
