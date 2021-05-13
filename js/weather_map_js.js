@@ -122,7 +122,6 @@ function weatherPanels(coordinates){
         //         //     $(this).toggleClass('rain')
         //         // }
         //         // $(".rain").html('<i class="fas fa-cloud-rain"></i>');
-
     });
 }
 
