@@ -38,19 +38,27 @@ const users = [
     }
 ];
 
-let emailsOnly = [];
-
-emailsOnly = users.map(function (user){
-    let emailOnly = user.email;
-    return emailOnly;
-
-});
+// let emailsOnly = [];
+//
+// emailsOnly = users.map(function (user){
+//     let emailOnly = user.email;
+//     return emailOnly;
+//
+// });
 
 // ES6
 
 let es6Emails = users.map(user => user.email);
 
-console.log(emailsOnly)
+// console.log(emailsOnly)
 console.log(es6Emails)
 
+let filteredUsers = users.filter((user) => {
+    console.log(user.languages.length);
+    let languagesKnown = user.languages.length;
+    if (languagesKnown >= 3){
+        return user;
+    }
+});
 
+console.log(filteredUsers);
