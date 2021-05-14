@@ -136,7 +136,6 @@ function searchLocation (){
         $('#currentDisplay').empty();
         marker.setLngLat(searchCoords);
         weatherPanels(searchCoords);
-
         map.flyTo({
             center: searchCoords,
             zoom: 9,
