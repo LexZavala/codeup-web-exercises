@@ -45,9 +45,6 @@ users.push({
   languages
 });
 
-
-
-
 // TODO: replace `var` with `let` in the following variable declarations
 let emails = [];
 let names = [];
@@ -91,9 +88,9 @@ let list = '<ul>';
 
   for (let developer of developers) {
     // TODO: rewrite the assignment below to use template strings
-    list += '<li>' + `${developer}` + '</li>';
+    list += `<li>${developer}</li>`;
   }
 list += '</ul>';
 
-  console.log(developers)
+  console.log(list)
 
