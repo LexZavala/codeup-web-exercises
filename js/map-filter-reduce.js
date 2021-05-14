@@ -38,4 +38,19 @@ const users = [
     }
 ];
 
-users.map
+let emailsOnly = [];
+
+emailsOnly = users.map(function (user){
+    let emailOnly = user.email;
+    return emailOnly;
+
+});
+
+// ES6
+
+let es6Emails = users.map(user => user.email);
+
+console.log(emailsOnly)
+console.log(es6Emails)
+
+
