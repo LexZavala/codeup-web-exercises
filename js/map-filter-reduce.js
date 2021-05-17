@@ -76,9 +76,47 @@ const yearsAvg = users.reduce((total, user, index) => {
 }, 0);
 console.log(yearsAvg);
 
-const longestEmail = users.reduce((total, user) => {
-    console.log(user.email);
-}, 0);
+
+//SHORTEST VERSION - if grabbed from the emails array
+let longestUserEmail = es6Emails.reduce((a, b) => a.length > b.length ? a : b);
+console.log("Longest email is : " + longestUserEmail);
+
+// SHORT VERSION
+// const longestEmail = users.reduce((longest, user) => {
+//     if (longest.email.length > user.email.length){
+//         return longest;
+//     } else {
+//         return user;
+//     }
+// }).email;
+// console.log(longestEmail);
+
+let longestEmail = users.reduce((longest, user, index, usersArray) => {
+    if (index === usersArray.length -1){
+        longest.push(user.email);
+        longest.sort(function (email1, email2){
+            return email2.length - email1.length;
+        });
+        return longest[0];
+    } else {
+        longest.push(user.email);
+        return longest;
+    }
+}, []);
+console.log(longestEmail);
+
+const nameList = users.reduce((nameList, user, index, usersArray) =>{
+    if (index === usersArray.length -1) {
+        nameList.push(user.name);
+        let niceJoin = nameList.join(", ");
+        niceJoin = "list of instructors are: " +niceJoin + ".";
+        return niceJoin;
+    }
+    nameList.push(user.name);
+     return nameList;
+}, []);
+console.log(nameList);
+
 
 
 
