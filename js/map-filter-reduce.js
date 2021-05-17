@@ -62,3 +62,23 @@ let filteredUsers = users.filter((user) => {
 });
 
 console.log(filteredUsers);
+
+// Reduce method exercises
+
+const yearsAvg = users.reduce((total, user, index) => {
+    total += user.yearsOfExperience;
+    console.log(total);
+    if (index === users.length -1) {
+        return total / users.length
+    } else {
+        return total;
+    }
+}, 0);
+console.log(yearsAvg);
+
+const longestEmail = users.reduce((total, user) => {
+    console.log(user.email);
+}, 0);
+
+
+
