@@ -117,6 +117,33 @@ const nameList = users.reduce((nameList, user, index, usersArray) =>{
 }, []);
 console.log(nameList);
 
+// const uniqueLang = users.reduce((lang, user, index, usersArray) => {
+//     lang = lang.concat(user.languages);
+//     console.log(lang);
+//     let noRepeat = [];
+//     for (let i = 0; i <= lang.length; i++){
+//         if (noRepeat.includes(lang[i])){
+//             return;
+//         } else {
+//             noRepeat.splice(lang[i]);
+//         }
+//         return noRepeat;
+//     }
+// }, []);
+// console.log(uniqueLang);
+
+// BONUS
+const uniqueLang = users.reduce((lang, user, index, usersArray) => {
+
+if (index === array.length - 1) {
+    // return getUniqueValues(nameArray);
+    return [... new Set(nameArray)].sort(); // Set creates a new array with the unique values
+} else {
+    return nameArray;
+    // return getUniqueValues(nameArray);
+}
+}, []);
+console.log(uniqueArray);
 
 
 
