@@ -82,7 +82,43 @@ let patchOptions = {
 fetch("https://pointed-ripple-stork.glitch.me/books/7", patchOptions)
     .then(getBooks);
 
+// DELETE
+
+let deleteOptions = {
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json',
+    }
+};
+$('#uniqueBooks').click(() => {
+    let inputVal = $('#id-to-delete').val();
+    console.log(inputVal);
+    fetch(`https://pointed-ripple-stork.glitch.me/books/${inputVal}`, deleteOptions)
+        .then(getBooks);
+})
+//     fetch("https://pointed-ripple-stork.glitch.me/books", getOptions)
+//         .then(resp => resp.json())
+//         .then(books => {
+//             let uniqueBooks = [];
+//             for (let book of books){
+//                 if (uniqueBooks.length === 0){
+//                     uniqueBooks.push(book);
+//                     continue;
+//                 }
+//                 for (let existingBook of uniqueBooks){
+//                     if (book.title !== existingBook.title || book.author.firstName !== existingBook.author.firstName || book.author.lastName !== existingBook.author.lastName ){
+//                         uniqueBooks.push(book)
+//                     } else {
+//                         fetch(`https://pointed-ripple-stork.glitch.me/books/${book.id}`, deleteOptions)
+//                             .then(getBooks)
+//                     }
+//                 }
+//             }
+//         })
+// });
+
+
 //    CALL THE FUNCTION
-getBooks();
+// getBooks();
 
 
