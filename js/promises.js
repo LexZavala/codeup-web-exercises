@@ -15,7 +15,7 @@ function githubUsername (userName) {
             let createdAt = lastPush.created_at
             let cleanDate = createdAt.split('T')
 
-            console.log(`Last date of push was ${cleanDate[0]}`)
+            console.log(`Last date of push was ${cleanDate[0]}`
         })
 }
 
