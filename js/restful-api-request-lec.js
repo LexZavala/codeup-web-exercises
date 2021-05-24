@@ -79,8 +79,7 @@ let patchOptions = {
     body: JSON.stringify(patchThis),
 }
 
-fetch("https://pointed-ripple-stork.glitch.me/books/7", patchOptions)
-    .then(getBooks);
+how
 
 // DELETE
 
