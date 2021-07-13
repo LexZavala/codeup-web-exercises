@@ -97,7 +97,6 @@ function weatherPanels(coordinates){
                 + '<h2 id="second">' + currentDay + '</h2>' + '</div>'
             );
 
-
             var splitTemp = currentDay.split("°");
             var numberOnly = splitTemp[0];
             if (Number(numberOnly) >= 80) {
