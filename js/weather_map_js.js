@@ -146,5 +146,4 @@ function searchLocation (){
         });
     });
 }
-
 $('#searchButton').click(searchLocation);
